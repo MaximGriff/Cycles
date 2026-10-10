@@ -96,6 +96,14 @@ fun SumSinScreen(modifier: Modifier = Modifier){
         ) {
             Text("Вычислить")
         }
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        Text(
+            text = resultText,
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.primary
+        )
     }
 }
 
