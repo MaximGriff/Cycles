@@ -28,7 +28,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.cycles.ui.theme.CyclesTheme
-
+import kotlin.math.sin
 
 
 class MainActivity : ComponentActivity() {
@@ -97,6 +97,20 @@ fun SumSinScreen(modifier: Modifier = Modifier){
             Text("Вычислить")
         }
     }
+}
+
+fun calculateSum(n: Int): Double {
+    var totalSum = 0.0
+    var currentDenominator = 0.0
+
+    for (i in 1..n) {
+        // Накапливаем знаменатель: sin(1) + sin(2) + ... + sin(i)
+        currentDenominator += sin(i.toDouble())
+        // Прибавляем к общей сумме дробь 1 / знаменатель
+        totalSum += 1.0 / currentDenominator
+    }
+
+    return totalSum
 }
 
 @Composable
