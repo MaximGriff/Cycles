@@ -38,9 +38,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             CyclesTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                    SumSinScreen(
+                        Modifier.padding(innerPadding)
                     )
                 }
             }
@@ -121,18 +120,18 @@ fun calculateSum(n: Int): Double {
     return totalSum
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+//@Composable
+//fun Greeting(name: String, modifier: Modifier = Modifier) {
+//    Text(
+//        text = "Hello $name!",
+//        modifier = modifier
+//    )
+//}
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     CyclesTheme {
-        Greeting("Android")
+        SumSinScreen()
     }
 }
